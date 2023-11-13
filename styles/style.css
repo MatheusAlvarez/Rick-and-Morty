@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'RickAndMorty';
+    src: url('../fonts/get_schwifty.ttf') format('truetype'); 
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "RickAndMorty", sans-serif;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+/* ------------------------------ Seção HEADER ------------------------------ */
+
+header{            
+    width: 100%;
+    padding: 15px 200px;
+    display: flex;
+    z-index: 999;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;    
+    transition: 0.5s ease;
+}
+
+header .logo{    
+    font-size: 1.6rem;
+    font-weight: 700;    
+    color: #FFF;
+    text-decoration: none;
+    transition: 1s;
+}
+
+header .logo:hover{
+    color: #44f444;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    color: #fff;
+    margin-left: 30px;
+    position: relative;        
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;    
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;    
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+    background: #44f444;
+}
+
+/* ------------------------------ FIM Seção HEADER ------------------------------ */
+
+
+/* ------------------------------ Seção container-home ------------------------------ */
+.container-home{
+    background: #44f444;
+    position: relative;
+    min-height: 100vh;
+    display: flex;    
+    flex-direction: column;    
+    justify-content: center;
+}
+
+.container-home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(251, 3, 3, 0.034);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.content{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.container-home .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+
+.container-home .content.active{
+    display: block;
+}
+
+.container-home .content h1{
+    font-size: 5em;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    letter-spacing: 3px;    
+}
+
+.container-home .content p{
+    margin-bottom: 65px;
+    font-size: 1.1em;
+}
+
+.container-home .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: #1cbd1c;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+.container-home .content a:hover{
+    background: #1cbd1c;    
+    color: #fff;
+}
+
+.container-home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.container-home .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+
+.container-home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.container-home .media-icons a:hover{
+    transform: scale(1.3);
+    color: #44f444;
+}
+
+.container-home video{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ------------------------------ FIM Seção container-home ------------------------------ */
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: #44f444;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+  
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}   
+  
+.video-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+@media (max-width: 991px){
+    header{
+        padding: 12px 20px;
+    }
+    
+    section{
+        padding: 100px 9px;
+    }
+
+    .container-home .media-icons{
+        right: 15px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a{
+        color: #222;
+        font-size: 0.8em;
+        margin: 10px;
+    }  
+     
+    header .navigation .navigation-items a:before{
+        background: #222;
+        height: 2px;
+    }    
+    header .navigation.active .navigation-items{
+        background: #fff;
+        width: 500px;
+        max-width: 500px; 
+        margin: 10px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }  
+        
+    .menu.active{
+        z-index: 999;
+        background-size: 15px;
+        background-position: center;
+        transition: 0.3s ease;
+    } 
+}
+ 
+@media (max-width: 560px){
+    
+    p{
+        font-size: 0.8em;
+    } 
+    .container-home .content h1{
+        font-size: 1.4em;
+        line-height: 50px;
+    }
+}
+
+
+@media (max-width: 360px){
+    
+    p{
+        font-size: 0.6em;
+    }
+    .container-home .content h1{
+        font-size: 1.1em;
+        line-height: 42px;
+    }
+}
