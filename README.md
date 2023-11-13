@@ -20,7 +20,7 @@
 
 ## 💻 Sobre o projeto
 
-Apresento um projeto de slides desenvolvido em HTML, CSS e JavaScript, proporcionando vários slides da série Rick and Morty.
+É com grande entusiasmo que apresento meu projeto de slides, uma imersão interativa no vibrante universo da série "Rick and Morty". Desenvolvido com maestria utilizando as poderosas ferramentas web de HTML, CSS e JavaScript, esta apresentação proporciona uma experiência envolvente e cativante.
 
 ---
 
